@@ -4,7 +4,7 @@ i=0
 extension=0
 h=0
 c=0
-while [ "$i" -le "180" ]
+while [ "$i" -le "179" ]
 do
 	if (( "$i" == 0))
 	then
