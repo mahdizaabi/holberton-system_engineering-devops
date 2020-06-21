@@ -11,11 +11,11 @@ do
 		echo "Hour: 0"
 	elif (( "$i" % "60" == 0 ))
 	then
-		h=$((1 + $extension))
+		h=$((1 + extension))
 		echo "Hour: $h"
 		((extension++))
 	else
-		c=$(($i - $extension * 60))
+		c=$((i - extension * 60))
 		echo "$c"
 	fi 
 	((i++))
