@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+i=1
+while [ "$i" -le "20" ]
+do
+	echo "$i"
+	if [ "$i" == "4" ]
+	then
+		echo "bad luck from China"
+	fi
+	if [ "$i" == "9" ]
+	then
+		echo "bad luck from Japan"
+	fi
+	if [ "$i" == "17" ]
+	then
+		echo "bad luck from Italy"
+	fi
+	((i++))
+done
