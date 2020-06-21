@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
 
-for i in {1..10}
+i=0
+
+while [ "$i" -lt "10" ]
 do
-	if [ "$i" -eq "9" ]
+	if [ "$i" == 8 ]
 	then
-		echo "Hi"
+	echo "Hi"
 	else
-		echo "Holberton School"
+	echo "Holberton School"
 	fi
+	((i++))
 done
