@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#filter output
+
+e=$(ls)
+
+for i in $e
+do
+	f=${i:2}
+	echo "$f"
+done
