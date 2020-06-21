@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+#first method : integer comparaison
+#for i in {1..10}
+do
+	if [ $i -eq 9 ]
+	then
+		echo "hi"
+	else
+		echo "hello"
+	fi
+#done
+
+#second method string alphabetic ASCI comparaison
+
+for i in {1..10}
+do
+	if [[ $i == 9 ]]
+	then
+		echo "hi"
+	else
+		echo "hello"
+	fi
+done
