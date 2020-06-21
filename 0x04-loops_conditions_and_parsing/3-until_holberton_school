@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #display Holberrton School 10 times
 i=0
 until [[ $i -eq "10" ]]
