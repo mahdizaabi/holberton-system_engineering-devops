@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 #Bash script that creates a file
 
-
-start="start"
-restart="restart"
-stop="stop"
-
 if [ "$1" = "start" ]
 then
 	./manage_my_process &
