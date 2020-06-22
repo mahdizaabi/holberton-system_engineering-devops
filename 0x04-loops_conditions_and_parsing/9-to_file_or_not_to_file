@@ -11,7 +11,7 @@ then
 	else
 		echo "holbertonschool file is empty"
 	fi
-	if [ -f "$FILE" ]
+	if [ -f "$file" ]
 	then
 		echo "holbertonschool is a regular file"
 	fi
