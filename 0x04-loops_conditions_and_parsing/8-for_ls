@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #filter output
-
-for i in $(ls)
+e=$(ls)
+for i in $e
 do	
-	echo $i | cut -d '-' -f 2
+	echo "$i" | cut -d '-' -f 2
 done
