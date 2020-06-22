@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Manage my process
+
+FILE="/tmp/my_process"
+
+while true
+do
+	echo "I am alive!" >> "$FILE"
+	sleep 2
+done
