@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# code to display lines containing "bash"
+# shellcheck disable=SC2009
+
+ps axuf | grep "bash"
+
