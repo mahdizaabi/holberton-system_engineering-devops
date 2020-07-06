@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-puts ARGV[0].match(/hb(t{1,6})?n/).join()
+puts ARGV[0].match(/hbt*n/).join()
