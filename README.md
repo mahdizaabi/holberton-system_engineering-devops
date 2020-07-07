@@ -6,15 +6,15 @@
 
 
 <p align="center">
-  <img src="https://dwglogo.com/wp-content/uploads/2019/03/1800px-gnu_bash_logo.png" width="130" height="80">
+  <img src="https://dpsvdv74uwwos.cloudfront.net/statics/img/product-pages/devops.png" width="130" height="80">
   <h3 align="center">system_engineering-devops#0</h3>
 
   <p align="center">
         <em>--</em>
     <br /><br />
-    <a href="https://github.com/fredhii/holberton-system_engineering-devops/issues">Report Bug</a>
+    <a href="https://github.com/mahdizaabi/holberton-system_engineering-devops/issues">Report Bug</a>
     ·
-    <a href="https://github.com/fredhii/holberton-system_engineering-devops/issues">Request Feature</a>
+    <a href="https://github.com/mahdizaabi/holberton-system_engineering-devops/issues">Request Feature</a>
   </p>
 </p>
 
