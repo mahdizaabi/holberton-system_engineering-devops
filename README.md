@@ -31,12 +31,12 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/fredhii/holberton-system_engineering-devops?style=flat-square
-[contributors-url]: https://github.com/fredhii/holberton-system_engineering-devops/graphs/contributors
+[contributors-url]: https://github.com/mahdizaabi/holberton-system_engineering-devops/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/fredhii/holberton-system_engineering-devops.svg?style=flat-square
-[forks-url]: https://github.com/fredhii/holberton-system_engineering-devops/network/members
+[forks-url]: https://github.com/mahdizaabi/
 [stars-shield]: https://img.shields.io/github/stars/fredhii/holberton-system_engineering-devops.svg?style=flat-square
 [stars-url]: https://github.com/fredhii/holberton-system_engineering-devops/stargazers
 [issues-shield]: https://img.shields.io/github/issues/fredhii/holberton-system_engineering-devops?style=flat-square
-[issues-url]: https://github.com/fredhii/holberton-system_engineering-devops/issues
+[issues-url]: https://github.com/mahdizaabi/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/fredhii
+[linkedin-url]: https://www.linkedin.com/in/mahdi-zaabi-8430a61a1/
