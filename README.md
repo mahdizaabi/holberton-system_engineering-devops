@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="https://dwglogo.com/wp-content/uploads/2019/03/1800px-gnu_bash_logo.png" width="130" height="80">
-  <h3 align="center">0x07. Networking basics #0</h3>
+  <h3 align="center">system_engineering-devops#0</h3>
 
   <p align="center">
         <em>--</em>
