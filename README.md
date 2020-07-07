@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <img src="https://dpsvdv74uwwos.cloudfront.net/statics/img/product-pages/devops.png" width="130" height="80">
+  <img src="https://dpsvdv74uwwos.cloudfront.net/statics/img/product-pages/devops.png" width="180" height="80">
   <h3 align="center">system_engineering-devops#0</h3>
 
   <p align="center">
