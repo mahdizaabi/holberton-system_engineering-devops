@@ -6,8 +6,8 @@
 
 
 <p align="center">
-  <img src="https://dpsvdv74uwwos.cloudfront.net/statics/img/product-pages/devops.png" width="180" height="80">
-  <h3 align="center">system_engineering-devops#0</h3>
+  <img src="https://static1.squarespace.com/static/58b71e6f6a4963b4cc2c78b8/58d02ebbdb29d67782682bff/58d02ed3bebafbc474c7a529/1494356728752/AAEAAQAAAAAAAAKYAAAAJDQ5YmZjODZkLTU5YmEtNDBjZi1iM2E2LWEyNjdjYTk4NWZhNQ.png" width="180" height="80">
+  <h3 align="center">system_engineering-devops</h3>
 
   <p align="center">
         <em>--</em>
