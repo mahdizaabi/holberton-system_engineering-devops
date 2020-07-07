@@ -19,10 +19,8 @@
 </p>
 
 
-### Usage python scripts
-```sh
-./script
-```
+### Usage Bash scripts
+vagrant@vagrant-ubuntu-trusty-64:~/holberton-system_engineering-devops$./script
 
 
 ## Contributing
