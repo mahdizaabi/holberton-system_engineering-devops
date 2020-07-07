@@ -1,3 +1,3 @@
-Shell Basics
-*******************
-This folder contain the main commands that i'am using with Shell
+# holberton-system_engineering-devops
+
+Shell basics project
