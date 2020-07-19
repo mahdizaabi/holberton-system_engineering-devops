@@ -20,11 +20,12 @@
 
 
 ### Usage Bash scripts
-vagrant@vagrant-ubuntu-trusty-64:~/holberton-system_engineering-devops$./script
+
+    vagrant@vagrant-ubuntu-trusty-64:~/holberton-system_engineering-devops$./script
 
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+    Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 
 
