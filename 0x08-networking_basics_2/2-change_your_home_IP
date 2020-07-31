@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 #a script to resolve the localhost and facebook adresses
-
-sudo /bin/sh -c 'echo "8.8.8.8 www.facebook.com" >> /etc/hosts'
-sudo /bin/sh -c 'sed -i 's/127.0.0.1/127.0.0.2/' /etc/hosts'
+cp /etc/hosts ~/hosts.new
+sed -i 's/127.0.0.1/127.0.0.2/' ~/hosts.new
+echo "8.8.8.8 www.facebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
