@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Connect to the server using a specific privat key 'holberton'
+
+ssh -i ~/.ssh/holberton ubuntu@35.185.121.162
+
+
