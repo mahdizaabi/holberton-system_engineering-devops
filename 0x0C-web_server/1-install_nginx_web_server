@@ -3,7 +3,7 @@
 
 sudo apt-get update -y
 sudo apt-get install nginx -y
-sudo /etc/init.d/nginx start
+sudo service nginx start
 sudo chmod 777 /var/www/html/inde
 x.nginx-debian.html
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
