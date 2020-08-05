@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #INstall NGINX and configue the default html page
 
-sudo apt-get update
-sudo apt-get install nginx
+sudo apt-get update -y
+sudo apt-get install nginx -y
 sudo /etc/init.d/nginx start
 sudo chmod 777 /var/www/html/inde
 x.nginx-debian.html
