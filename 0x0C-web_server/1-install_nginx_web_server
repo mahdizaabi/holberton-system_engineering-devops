@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#INstall NGINX and configue the default html page
 
 sudo apt-get update
 sudo apt-get install nginx
