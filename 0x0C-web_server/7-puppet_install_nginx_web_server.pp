@@ -9,7 +9,7 @@ command => 'nginx start',
 path    => '/etc/init.d',
 }
 
-file { '/var/www/html/index.html':
+file { '/var/www/html/index.nginx-debian.html':
   content => 'Holberton School',
 }
 
