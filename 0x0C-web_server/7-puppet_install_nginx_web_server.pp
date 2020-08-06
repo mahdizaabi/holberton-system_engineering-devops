@@ -1,7 +1,7 @@
 #puppet manifest to set up nginx webserver on the remote machine
 
 package { 'nginx':
-ensure  => installed,
+ensure  => latest,
 }
 
 file { '/var/www/html/index.nginx-debian.html':
