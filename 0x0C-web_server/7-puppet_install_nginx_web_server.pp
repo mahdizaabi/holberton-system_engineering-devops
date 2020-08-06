@@ -1,7 +1,7 @@
 #puppet manifest to set up nginx webserver on the remote machine
 
 package { 'nginx':
-ensure  => latest,
+ensure  => installed,
 }
 
 exec { 'execution':
