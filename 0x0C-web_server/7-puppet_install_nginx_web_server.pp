@@ -10,7 +10,8 @@ path    => '/etc/init.d',
 }
 
 file { '/var/www/html/index.nginx-debian.html':
-  content => 'Holberton School',
+ensure  => present,
+content => 'Holberton School',
 }
 
 file_line { 'sudo_rule':
