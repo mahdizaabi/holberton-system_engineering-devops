@@ -1,7 +1,7 @@
 #puppet manifest to set up nginx webserver on the remote machine
 
 package { 'nginx':
-ensure  => installed,
+ensure  => latest,
 }
 
 exec { 'execution':
@@ -10,10 +10,11 @@ path    => '/etc/init.d',
 }
 
 file { '/var/www/html/index.nginx-debian.html':
+ensure  => present,
 content => 'Holberton School',
 }
 
-file_line { 'sudo_rule':
+file_line { 'redirection':
 ensure => present,
 path   => '/etc/nginx/sites-available/default',
 after  => 'listen 80 default_server;',
