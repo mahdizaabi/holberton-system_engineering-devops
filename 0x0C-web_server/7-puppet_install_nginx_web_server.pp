@@ -6,7 +6,7 @@ ensure  => latest,
 
 exec { 'execution':
 command => 'nginx start',
-path    => '/etc/init.d'
+path    => '/etc/init.d',
 }
 
 file_line { 'sudo_rule':
