@@ -20,7 +20,7 @@ after  => 'listen 80 default_server;',
 line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
-exec { 'restart':
-command => 'nginx restart',
-path    => '/etc/init.d',
+service { 'nginx':
+  ensure  => running,
+  require => Package['nginx'],
 }
