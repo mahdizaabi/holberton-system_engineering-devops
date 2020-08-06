@@ -15,8 +15,9 @@ content => 'Holberton School',
 }
 
 file_line { 'sudo_rule':
-path => '/etc/nginx/sites-available/default',
-line => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+path  => '/etc/nginx/sites-available/default',
+after => 'listen 80 default_server;',
+line  => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
 exec { 'restart':
