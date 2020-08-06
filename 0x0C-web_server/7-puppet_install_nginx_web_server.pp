@@ -9,6 +9,10 @@ command => 'nginx start',
 path    => '/etc/init.d',
 }
 
+file { '/var/www/html/index.html':
+  content => 'Holberton School',
+}
+
 file_line { 'sudo_rule':
 path => '/etc/nginx/sites-available/default',
 line => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
