@@ -4,10 +4,10 @@ package { 'nginx':
 ensure  => installed,
 }
 
-exec { 'execution':
-command => 'nginx start',
-path    => '/etc/init.d',
-}
+#exec { 'execution':
+#command => 'nginx start',
+#path    => '/etc/init.d',
+#}
 
 file { '/var/www/html/index.nginx-debian.html':
 content => 'Holberton School',
