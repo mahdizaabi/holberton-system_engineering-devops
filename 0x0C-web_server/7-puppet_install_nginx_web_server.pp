@@ -10,7 +10,6 @@ path    => '/etc/init.d',
 }
 
 file { '/var/www/html/index.nginx-debian.html':
-ensure  => present,
 content => 'Holberton School',
 }
 
