@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Installs Nginx with 404 Error
+# Installs Nginx with 404 Error page
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
