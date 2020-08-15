@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#fix the bug
+
+
+sudo service nginx stop
+sudo apt-get purge nginx nginx-common
+sudo apt update
+sudo apt install nginx
+sudo ufw allow 'Nginx HTTP'
