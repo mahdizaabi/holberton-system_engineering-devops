@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Make it short
+# fix the bug and Make it short
+
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 service nginx stop
