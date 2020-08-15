@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Create the symbolic link to the sites-available directory
+
+sudo rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx start
