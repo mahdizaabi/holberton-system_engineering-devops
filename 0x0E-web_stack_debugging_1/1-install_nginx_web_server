@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script to link sites-enabled to sites-available and start nginx without running status
+# link the file and make it shorter
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-systemctl daemon-reload
-systemctl start nginx
+sudo service nginx start
+rm /run/nginx.pid
