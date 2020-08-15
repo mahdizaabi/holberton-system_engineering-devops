@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
-#fix the bug
+#make it short
 
-
-sudo service nginx stop
-sudo apt-get purge nginx nginx-common
-sudo apt update
-sudo apt install nginx
-sudo ufw allow 'Nginx HTTP'
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx stop
