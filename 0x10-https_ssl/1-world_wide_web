@@ -23,7 +23,7 @@ run()
     type=`dig web-02.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f3 -d$'\t'`
     echo "The subdomain web-01 is a $type record and points to $ipp"
     ipp=`dig web-02.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f4 -d$'\t'`
-    type=`dig web-02.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f3 -d$'\t'
+    type=`dig web-02.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f3 -d$'\t'`
     echo "The subdomain web-02 is a $type record and points to $ipp"
 }
 if [ $# -lt 2 ]; then
