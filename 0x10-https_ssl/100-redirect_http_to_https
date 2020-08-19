@@ -1,0 +1,84 @@
+global
+	log /dev/log	local0
+	log /dev/log	local1 notice
+	chroot /var/lib/haproxy
+	stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+	stats timeout 30s
+	user haproxy
+	group haproxy
+	daemon
+
+	# Default SSL material locations
+	ca-base /etc/ssl/certs
+	crt-base /etc/ssl/private
+
+	# Default ciphers to use on SSL-enabled listening sockets.
+	# For more information, see ciphers(1SSL). This list is from:
+	#  https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
+	# An alternative list with additional directives can be obtained from
+	#  https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=haproxy
+	ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:RSA+AESGCM:RSA+AES:!aNULL:!MD5:!DSS
+	ssl-default-bind-options no-sslv3
+
+defaults
+	log	global
+	mode	http
+	option	httplog
+	option	dontlognull
+        timeout connect 5000
+        timeout client  50000
+        timeout server  50000
+	errorfile 400 /etc/haproxy/errors/400.http
+	errorfile 403 /etc/haproxy/errors/403.http
+	errorfile 408 /etc/haproxy/errors/408.http
+	errorfile 500 /etc/haproxy/errors/500.http
+	errorfile 502 /etc/haproxy/errors/502.http
+	errorfile 503 /etc/haproxy/errors/503.http
+	errorfile 504 /etc/haproxy/errors/504.http
+global
+        log /dev/log    local0
+        log /dev/log    local1 notice
+        stats timeout 30s
+        user haproxy
+        group haproxy
+        daemon
+defaults
+        log     global
+        mode    http
+        option  httplog
+        option  dontlognull
+        timeout connect 5000
+        timeout client  50000
+        timeout server  50000
+listen holberton
+        bind *:80
+        mode http
+        stats enable
+        balance roundrobin
+        option httpclose
+        option forwardfor
+        server 1450-web-01 34.75.254.10:80 check
+        server 1450-web-02 34.75.125.125:80 check
+frontend public
+  # HTTP
+  bind :80
+  # Redirect all HTTP traffic to HTTPS
+  redirect scheme https if !{ ssl_fc }
+ 
+  # HTTPS
+  # Example with CA certificate bundle
+  # bind :443 ssl crt cert.pem ca-file bundle.crt
+  # Example without CA certification bunch
+  bind :443 ssl crt snakeoil.pem
+ 
+  # The node backends - websockets will be managed automatically, given the
+  # right base paths to send them to the right Node.js backend.
+  #
+  # If you wanted to specifically send websocket traffic somewhere different
+  # you'd use an ACL like { hdr(Upgrade) -i WebSocket }. Looking at path works
+  # just as well, though - such as { path_beg /socket.io } or similar. Adjust your
+  # rules to suite your specific setup.
+  use_backend node if { path_beg /served/by/node/ }
+  # Everything else to Nginx.
+  default_backend nginx
+ 
