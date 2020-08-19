@@ -3,7 +3,7 @@
 
 url=""
 domain=$1
-sub=$1
+sub=$2
 url+="$sub"
 url+="."
 url+="$domain"
@@ -13,18 +13,20 @@ type=""
 
 run()
 {  
-    ipp=`dig www.$domain | awk "NR==14{ print }" | cut -f5 -d$'\t'`
-    type=`dig www.$2 | awk "NR==32{ print }" | cut -f4 -d$'\t'`
-    echo "The subdomain www is a $type record and points to $ipp"
-    ipp=`dig lb-01.$domain | awk "NR==14{ print }" | cut -f5 -d$'\t'`
-    type=`dig lb-01.$2 | awk "NR==32{ print }" | cut -f4 -d$'\t'`
-    echo "The subdomain lb-01 is a $type record and points to $ipp"
-    ipp=`dig web-01.$domain | awk "NR==14{ print }" | cut -f5 -d$'\t'`
-    type=`dig web-01.$2 | awk "NR==32{ print }" | cut -f4 -d$'\t'`
+    #ipp=`dig www.$domain | awk "NR==14{ print }" | cut -f5 -d$'\t'`
+    #type=`dig www.$2 | awk "NR==32{ print }" | cut -f4 -d$'\t'`
+    #echo "The subdomain www is a $type record and points to $ipp"
+    #ipp=`dig lb-01.$domain | awk "NR==14{ print }" | cut -f5 -d$'\t'`
+    #type=`dig lb-01.$2 | awk "NR==32{ print }" | cut -f4 -d$'\t'`
+    #echo "The subdomain lb-01 is a $type record and points to $ipp"
+    ipp=`dig web-02.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f4 -d$'\t'`
+    #echo "$ipp"
+    #echo "$ipp"
+    type=
     echo "The subdomain web-01 is a $type record and points to $ipp"
-    ipp=`dig web-02.$domain | awk "NR==14{ print }" | cut -f5 -d$'\t'`
-    type=`dig web-02.$2 | awk "NR==32{ print }" | cut -f4 -d$'\t'`
-    echo "The subdomain web-02 is a $type record and points to $ipp"
+    #ipp=`dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" |  cut -f4 -d$'\t'`
+    #type=`dig web-02.$2 | awk "NR==32{ print }" | cut -f4 -d$'\t'`
+    #echo "The subdomain web-02 is a $type record and points to $ipp"
 }
 if [ $# -lt 2 ]; then
     run
