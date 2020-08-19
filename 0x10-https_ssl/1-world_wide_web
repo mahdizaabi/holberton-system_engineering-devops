@@ -1,20 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #information abd the domain and subdomain
-#dig www.lothric.tech | awk "NR==14{ print }" | cut -f5 -d$'
+
 url=""
 domain=$2
 sub=$1
 url+="$sub"
 url+="."
 url+="$domain"
-
-
-#if [ "$#" -ne 1 ]; then
-    #break
-#fi
-#dig $url | awk "NR==14{ print }" | cut -f5 -d$'
 type=""
-#ip=""
 type=`dig $url | awk "NR==14{ print }" | cut -f4 -d$'\t'`
 ip=`dig $url | awk "NR==14{ print }" | cut -f5 -d$'\t'`
 
