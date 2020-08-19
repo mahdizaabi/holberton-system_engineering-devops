@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#information abd the domain and subdomain
+
+url=""
+domain=$1
+sub=$2
+url+="$sub"
+url+="."
+url+="$domain"
+type=""
+
+#ipp=`dig $domain | awk "NR==14{ print }" | cut -f5 -d$'\t'`
+
+run()
+{  
+    ipp=`dig www.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f5 -d$'\t'`
+    type=`dig www.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f4 -d$'\t'`
+    echo "The subdomain www is a $type record and points to $ipp"
+    ipp=`dig lb-01.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f5 -d$'\t'`
+    type=`dig lb-01.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f4 -d$'\t'`
+    echo "The subdomain lb-01 is a $type record and points to $ipp"
+    ipp=`dig web-01.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f4 -d$'\t'`
+    type=`dig web-02.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f3 -d$'\t'`
+    echo "The subdomain web-01 is a $type record and points to $ipp"
+    ipp=`dig web-02.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f4 -d$'\t'`
+    type=`dig web-02.$domain | grep -A1 'ANSWER SECTION:' | awk "NR==2{ print }" | cut -f3 -d$'\t'`
+    echo "The subdomain web-02 is a $type record and points to $ipp"
+    #echo "$ipp"
+}
+if [ $# -lt 2 ]; then
+    run
+else
+    type=`dig $url | awk "NR==14{ print }" | cut -f4 -d$'\t'`
+    ip=`dig $url | awk "NR==14{ print }" | cut -f5 -d$'\t'`
+    echo "The subdomain $sub is a $type record and points to $ip"
+fi
