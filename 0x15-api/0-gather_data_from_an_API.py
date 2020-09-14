@@ -10,9 +10,9 @@ if __name__ == '__main__':
     user_id = argv[1]
     listx = []
     get_user = requests.get("https://jsonplaceholder.typicode.com/users/{}".
-                        format(user_id)).json()
-    tasks = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}".
-                        format(user_id)).json()
+                            format(user_id)).json()
+    tasks = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
+                         .format(user_id)).json()
     for task in tasks:
         if task.get('completed'):
             listx.append(task.get('title'))
