@@ -12,7 +12,7 @@ if __name__ == '__main__':
     get_user = requests.get("https://jsonplaceholder.typicode.com/users/{}".
                             format(user_id), verify=False).json()
     tasks = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
-                         .format(user_id, verify=False)).json()
+                         .format(user_id), verify=False).json()
     for task in tasks:
         if task.get('completed'):
             listx.append(task.get('title'))
