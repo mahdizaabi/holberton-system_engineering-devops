@@ -18,4 +18,5 @@ if __name__ == '__main__':
             listx.append(task.get('title'))
     print("Employee {} is done with tasks({}/{}):".
           format(get_user.get('name'), len(listx), len(tasks)))
-    print("\n".join("\t {}".format(task) for task in listx))
+    for i in listx:
+        print("\t{}".format(i))
