@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     lcsv = []
     for i in tsks:
-        lcsv.append([userId, user.get('name'), i['completed'], i['title']])
+        lcsv.append([userId, user.get('username'), i['completed'], i['title']])
     myFile = open('{}.csv'.format(userId), 'w')
     with myFile:
         writer = csv.writer(myFile)
