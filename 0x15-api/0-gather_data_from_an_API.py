@@ -18,4 +18,5 @@ if __name__ == '__main__':
             task_titel.append(task.get('title'))
     print("Employee {} is done with tasks({}/{}):".
           format(user.get('name'), len(task_titel), len(todo)))
-    print("\n".join("\t {}".format(task) for task in task_titel))
+    for i in task_titel:
+        print("\t {}".format(i))
