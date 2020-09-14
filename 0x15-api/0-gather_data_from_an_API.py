@@ -11,12 +11,12 @@ if __name__ == '__main__':
     task_titel = []
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}".
                         format(userId)).json()
-    tasks = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}".
+    tsks = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}".
                         format(userId)).json()
-    for task in tasks:
+    for task in tsks:
         if task.get('completed') is True:
             task_titel.append(task.get('title'))
     print("Employee {} is done with tasks({}/{}):".
-          format(user.get('name'), len(task_titel), len(tasks)))
+          format(user.get('name'), len(task_titel), len(tsks)))
     for i in task_titel:
         print("\t {}".format(i))
