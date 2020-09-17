@@ -14,7 +14,6 @@ def recurse(subreddit, hot_list=[], after_party=None):
                      params=param)   
     status = r.status_code
     if status == requests.codes.ok:
-        print('f')
         x = r.json().get('data').get('children')
         for page in x:
             hot_list.append(page.get('data').get('title'))
@@ -22,9 +21,7 @@ def recurse(subreddit, hot_list=[], after_party=None):
             return None
         after_paty = r.json().get('data').get('after')
         if after_party is None:
-            print('from after')
             return hot_list
-        print('ccc')
         return recurse(subreddit, hot_list, after_party)
     else:
         return None
