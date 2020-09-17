@@ -22,6 +22,6 @@ def recurse(subreddit, hot_list=[], after_party=None):
         after_paty = r.json().get('data').get('after')
         if after_party is None:
             return hot_list
-        recurse(subreddit, hot_list, after_party)
+        return recurse(subreddit, hot_list, after_party)
     else:
         return None
