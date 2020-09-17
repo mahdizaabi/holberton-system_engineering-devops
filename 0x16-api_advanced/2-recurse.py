@@ -12,7 +12,8 @@ def recurse(subreddit, hot_list=[], after_party=None):
     r = requests.get('http://www.reddit.com/r/{}/hot.json'.format(subreddit),
                      headers=header,
                      params=param)
-    if r.status_code == requests.codes.ok:
+    if r.status_code == requests.codes.ok or\
+            r.json().get('kind', None) is not None:
         x = r.json().get('data').get('children')
         for page in x:
             hot_list.append(page.get('data').get('title'))
