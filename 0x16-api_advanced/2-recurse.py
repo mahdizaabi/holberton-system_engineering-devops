@@ -14,13 +14,15 @@ def recurse(subreddit, hot_list=[], after_party=None):
     status = r.status_code
     if status == requests.codes.ok:
         x = r.json().get('data').get('children')
+        after_party = r.json().get('data').get('after')
         for page in x:
             hot_list.append(page.get('data').get('title'))
         if len(hot_list) == 0:
             return None
-        after_paty = r.json().get('data').get('after')
+        #after_paty = r.json().get('data').get('after')
+        #print(after_party)
         if after_party is None:
-            print('oo')
+            #print('oo')
             return hot_list
         return recurse(subreddit, hot_list, after_party)
     else:
