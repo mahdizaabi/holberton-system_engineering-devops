@@ -17,6 +17,8 @@ def recurse(subreddit, hot_list=[], after_party=None):
         x = r.json().get('data').get('children')
         for page in x:
             hot_list.append(page.get('data').get('title'))
+        if len(hot_list) == 0:
+            return None
         after_paty = r.json().get('data').get('after')
         if after_party is None:
             return hot_list
