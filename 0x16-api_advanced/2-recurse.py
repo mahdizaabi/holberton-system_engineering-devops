@@ -9,7 +9,8 @@ import requests
 def recurse(subreddit, hot_list=[], after_party=None):
     header = {'User-Agent': 'fake'}
     param = {'after': after_party}
-    r = requests.get('http://www.reddit.com/r/{}/hot.json?after={}'.format(subreddit, after_party),
+    r = requests.get('http://www.reddit.com/r/{}/hot.json?after={}'
+                     .format(subreddit, after_party),
                      headers=header)
     status = r.status_code
     if status == requests.codes.ok:
