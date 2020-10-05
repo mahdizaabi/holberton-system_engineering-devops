@@ -1,0 +1,45 @@
+Issue Summary:
+At 00:00 i got reported that our Apache server is down, and all requests to the infrastructure resources resulted in internal error 500 . API services that are also deployed on this server return the same error response .
+
+The problem affected 100% of our traffic, and approximately 1200 clients have been unable to reach our web site from 00:00 to 00:30 .
+
+The root cause of this problem was a typing mistake that affected one of the resources file on the server which made many html files inaccessible .
+Timeline :
+
+00:00 : i was notified .
+
+00:05 : i made a request to the server using CURL
+
+00:08 : i checked the Error Log 
+
+00:10 : Issue was fixed 
+
+Downtime : 10 minutes
+
+  
+Diagnostic and Resolution :
+
+1- When I tried to make a get request, I did not get a response from the server .
+
+.
+That makes me sure that the problem is internally and one of the Apache files is corrupted 
+
+2- So,first what comes in my mind is to  check the Error log file of the Apache server, but surprisingly it was empty and nothing mentioned about the current problem . .
+
+3 - i went to the main Apache2 folder on the server, and i opened the php.ini, which is the default configuration file .
+
+4 -  i opened the file as root and searched for display_errors and as i expected, display_errors option was off:
+
+5 - changed the above line to : display_errors = On , saved the change, restart the apache2 and i request again the server .
+
+There was a typo mistake  in some file names that made the whole problem !.
+
+6 - with a simple Puppet script, the problem was fixed by correcting the file name .
+
+exec { '/var/www/html/wp-setting.php':  
+path    => [ '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' ],
+command => "sed -i 's/.phpp/.php/g' /var/www/html/wp-settings.php",
+}
+
+Preventative measures :
+To avoid such problems, it’s recommended to avoid manually typing the files paths, instead copy and past them .
