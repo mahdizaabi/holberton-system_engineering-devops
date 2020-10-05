@@ -6,7 +6,7 @@ exec {'/etc/php5/apache2/php.ini':
 
 exec { '/var/www/html/wp-setting.php':
   path    => [ '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' ],
-  command => "sed -i 's/.phpp/.php/g' /var/www/html/wp-settings.php",
+  command => "sed -i 's/class-wp-locale.phpp/class-wp-locale.php/g' /var/www/html/wp-settings.php",
 }
 
 exec {'/etc/init.d/apache2':
