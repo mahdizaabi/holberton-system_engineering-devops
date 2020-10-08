@@ -3,7 +3,7 @@ exec { 'set limit':
   path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
 }
 
-exec { 'restart':
+-> exec { 'restart':
   command => 'nginx restart',
   path    => '/etc/init.d/',
 }
