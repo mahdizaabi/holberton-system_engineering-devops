@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # restart gracefully gunicorn
-ExecReload=/bin/kill -HUP gunicorn
+kill -HUP gunicorn
 systemctl reload gunicorn
